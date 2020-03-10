@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngrx-shoes/core-data": ["libs/core-data/src/index.ts"],
+      "@ngrx-shoes/material": ["libs/material/src/index.ts"],
+      "@ngrx-shoes/ui-login": ["libs/ui-login/src/index.ts"],
+      "@ngrx-shoes/core-state": ["libs/core-state/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

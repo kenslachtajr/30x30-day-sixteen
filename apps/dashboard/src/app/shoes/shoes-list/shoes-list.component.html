@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Shoes</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let shoe of shoes" (click)="selected.emit(shoe)">
+        <h3 mat-line>
+          Title: {{ shoe.title }}
+        </h3>
+        <p mat-line>
+          Details: {{ shoe.details }}
+        </p>
+        <p mat-line>
+          Cool level: {{ shoe.coolLevel }}
+        </p>
+        <button
+          mat-icon-button
+          (click)="deleted.emit(shoe); $event.stopImmediatePropagation()"
+        >
+          <mat-icon *ngIf="!readonly">close</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="$event.stopImmediatePropagation()"
+          [routerLink]="shoe.id"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

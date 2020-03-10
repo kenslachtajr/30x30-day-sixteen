@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-50">
+    <ngrx-shoes-shoes-list
+      [shoes]="shoes$ | async"
+      (selected)="selectShoe($event)"
+      (deleted)="deleteShoe($event)"
+    >
+    </ngrx-shoes-shoes-list>
+  </div>
+
+  <div class="col-50">
+    <ngrx-shoes-shoes-details
+      [form]="form"
+      [shoe]="selectedShoe"
+      (saved)="saveShoe($event)"
+      (cancelled)="resetShoe()"
+    >
+    </ngrx-shoes-shoes-details>
+  </div>
+</div>
